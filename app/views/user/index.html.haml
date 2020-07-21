@@ -1,0 +1,10 @@
+.jumbotron.text-center
+  %h1 Water Quality Monitoring System
+.container
+  .row
+    .col-md-4.offset-md-4.mt-5.p-4.border.rounded
+      %h1 Login Page
+      =bootstrap_form_for @user, url: sign_in_path do |u|
+        =u.text_field :name
+        =u.password_field :password
+        =u.submit "Sign In", :class => "btn btn-success btn-block"

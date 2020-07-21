@@ -1,0 +1,21 @@
+%center
+  .container.mt-4
+    .row
+      .col-md-6.offset-md-3
+        %h3 Nodes
+        %table.table-hover
+          %thead
+            %tr
+              %th.p-3 Id
+              %th.p-3 Name
+              %th.p-3 Location
+              %th.p-3{colspan: 3} Operations
+          %tbody
+            - @nodes.each do |node|
+              %tr
+                %td.p-3= node.id
+                %td.p-3= node.name
+                %td.p-3= node.location
+                %td.p-3
+                  = link_to '', edit_node_path(node.id), method: "get", class: 'fa fa-edit btn'
+                  = link_to '', node_path(node.id), method: "delete", class: 'fa fa-trash btn', data: {confirm: 'Are you sure?'}

@@ -1,0 +1,7 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-3
+  - if session[:current_user_id]
+    = link_to 'WQMS', dashboard_index_path, class:"navbar-brand"
+    = link_to 'Show Nodes', node_index_path, class: "navbar-brand"
+    = link_to 'Add Node', new_node_path, class: "navbar-brand"
+    = link_to 'Charts',dashboard_charts_path, class: "navbar-brand"
+    = link_to 'Logout',sign_out_path, class: "navbar-brand", style: "margin-left:auto"
