@@ -1,0 +1,32 @@
+%center
+  %h2 Admin Dashboard
+  .container-fluid
+    .row
+      .col
+        %table.table-hover#readings.text-center
+          %thead
+            %tr
+              %th Node_id
+              %th Location
+              %th Time
+              %th Turbidity
+              %th PH
+              %th Temprature
+              %th DO
+              %th Flow
+          %tbody
+            -@readings.each do |reading|
+              %tr
+                %td= reading.node_id
+                %td= reading.node.location
+                %td= reading.date.strftime("%d-%m-%y")+' '+reading.date.strftime("%H:%M:%S")
+                %td= reading.turbidity
+                %td= reading.ph
+                %td= reading.temprature
+                %td= reading.dissolved_oxygen
+                %td= reading.flow
+
+:javascript
+  $(document).ready( function () {
+    $('#readings').DataTable();
+  });
