@@ -1,8 +1,0 @@
-.container.mt-5
-  .row
-    .col-md-4.offset-md-4
-      %h3 Create New Node
-      =bootstrap_form_for @node, url: node_index_path do |node|
-        =node.text_field :name, required: true
-        =node.text_field :location, required: true
-        =node.submit "Create Node", :class => "btn btn-success btn-block"

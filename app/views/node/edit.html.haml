@@ -1,8 +1,0 @@
-.container.mt-5
-  .row
-    .col-md-4.offset-md-4
-      %h3 Edit Node
-      =bootstrap_form_for @node, url: node_path, method: 'put' do |node|
-        =node.text_field :name, required: true
-        =node.text_field :location, required: true
-        =node.submit "Edit Node", :class => "btn btn-success btn-block"
